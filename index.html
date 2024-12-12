@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<!-- displays site properly based on user's device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
+	<!-- First time importing Google Fonts via. <link> elements -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<!-- CSS file + Head Icon -->
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
@@ -11,14 +18,15 @@
 </head>
 
 <body>
-	<main class="wrapper">
-		<div class="product-card">
-			<picture class="perfume-image">
-				<img class="perfume-image" src="./images/image-product-desktop.jpg" alt="Chanel Perfume">
+	<main>
+		<article class="product">
+			<picture class="product__image">
+				<source srcset="./images/image-product-desktop.jpg" media="(min-width: 600px)">
+				<img src="./images/image-product-mobile.jpg" alt="Chanel Perfume">
 			</picture>
 
-			<div class="group group__information">
-				<h2 class="product__type">PERFUME</h2>
+			<div class="product__information">
+				<p class="product__type">PERFUME</p>
 
 				<h1 class="product__title">Gabrielle Essence Eau De Parfum</h1>
 
@@ -27,12 +35,12 @@
 				
 				<div class="prices-section">
 					<h1 class="prices__current">$149.99</h1>
-					<h3 class="prices__original">$169.99</h3>
+					<p class="prices__original">$169.99</p>
 				</div>
 
-				<button class="add-to-card__button">Add to Cart</button>
+				<button  class="add-to-cart__button" data-icon="shopping-cart">Add to Cart</button>
 			</div>
-		</div>	
+		</article>	
   	</main>
 
 	<footer>

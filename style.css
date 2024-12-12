@@ -1,8 +1,26 @@
-
-
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: .7rem; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+:root {
+	/* Font Variables */
+	--fw-500: 500;
+	--fw-700: 700;
+
+	--ff-montserrat: 'Montserrat', sans-serif;
+	--ff-fraunces: 'Fraunces', serif;
+
+	/* Color Variables */
+	--clr-dark-cyan: hsl(158, 36%, 37%);
+	--clr-darker-cyan: hsl(158, 36%, 20%);
+	--clr-cream: hsl(30, 38%, 92%);
+
+	--clr-very-dark-blue: hsl(212, 21%, 14%);
+	--clr-dark-grayish-blue: hsl(228, 12%, 48%);
+	--clr-white: hsl(0, 0%, 100%);
+}
+
+
+/* ---------------------------------------------------------------- */
 /* 
 USING JOSH CAMEAU'S CSS RESET 
 RESOURCE: https://www.joshwcomeau.com/css/custom-css-reset/
@@ -55,3 +73,110 @@ RESOURCE: https://www.joshwcomeau.com/css/custom-css-reset/
   #root, #__next {
     isolation: isolate;
   }
+
+
+/* ---------------------------------------------------------------- */
+/* My own CSS styles */
+body {
+	font-family: var(--ff-montserrat);
+	font-weight: var(--fw-500);
+	font-size: .8rem;
+
+	background: var(--clr-cream);
+	color: var(--clr-dark-grayish-blue);
+
+	display: grid;
+	gap: 10px;
+	min-height: 100vh;
+	place-content: center;
+	margin: 1rem;
+}
+
+/* Wrapper styles */
+
+.product {
+	display: grid;
+	background: var(--clr-white);
+	border-radius: .75rem;
+	overflow: hidden;
+	max-width: 600px;
+
+	--content-padding: 1.5rem;
+	--content-spacing: 1rem;
+}
+
+@media (min-width: 600px) {
+	.product {
+		--content-padding: 1.75rem;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.prices-section {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.product__information {
+	display: grid;
+	gap: var(--content-spacing);
+	padding: var(--content-padding);
+}
+
+.product__type {
+	font-size: .65rem;
+	letter-spacing: 6px;
+}
+
+.product__title {
+	font-size: 2rem;
+	font-family: var(--ff-fraunces);
+	color: var(--clr-very-dark-blue);
+	line-height: 1.1;
+}
+
+.prices__current {
+	font-size: 2rem;
+	font-family: var(--ff-fraunces);
+	color: var(--clr-dark-cyan);
+}
+
+.prices__original {
+	text-decoration: line-through;
+}
+
+/* Button styles */
+.add-to-cart__button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 0;
+	padding: .75em 1.5em;
+	gap: .5rem;
+
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: var(--fw-700);
+	font-size: .75rem;
+
+	border-radius: .5rem;
+	background-color: var(--clr-dark-cyan);
+	color: var(--clr-white);
+}
+
+.add-to-cart__button[data-icon="shopping-cart"]::before {
+	content: "";
+	width: 15px;
+	height: 16px;
+	background-image: url("./images/icon-cart.svg");
+}
+
+.add-to-cart__button:hover, 
+.add-to-cart__button:focus {
+	background-color: var(--clr-darker-cyan);
+}
+
+
+
